@@ -1,5 +1,6 @@
 package com.edureka.hotelreservationsystem.payment_service.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,10 @@ public class PaymentService {
 	private PaymentRepository paymentRepository;
 
 	public Payment createPayment(Payment payment) {
+		
+		 // Process payment logic
+        payment.setStatus("COMPLETED");
+        payment.setPaymentDate(LocalDateTime.now());
 		return paymentRepository.save(payment);
 	}
 

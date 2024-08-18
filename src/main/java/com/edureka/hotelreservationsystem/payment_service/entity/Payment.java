@@ -1,6 +1,7 @@
 package com.edureka.hotelreservationsystem.payment_service.entity;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,6 +22,16 @@ public class Payment {
 
 	@Column(name = "amount", nullable = false)
 	private BigDecimal amount;
+	
+	@Column(name = "reservationId", nullable = false)
+	private Long reservationId;
+
+   
+	@Column(name = "status", nullable = false)
+    private String status;
+
+	@Column(name = "payment_date", nullable = false)
+    private LocalDateTime paymentDate;
 
 	public Payment() {
 		super();
@@ -67,6 +78,50 @@ public class Payment {
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
+
+	/**
+	 * @return the reservationId
+	 */
+	public Long getReservationId() {
+		return reservationId;
+	}
+
+	/**
+	 * @param reservationId the reservationId to set
+	 */
+	public void setReservationId(Long reservationId) {
+		this.reservationId = reservationId;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	/**
+	 * @return the paymentDate
+	 */
+	public LocalDateTime getPaymentDate() {
+		return paymentDate;
+	}
+
+	/**
+	 * @param paymentDate the paymentDate to set
+	 */
+	public void setPaymentDate(LocalDateTime paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+
+	
 
 	// Additional fields such as payment method, status etc.
 
